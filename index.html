@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-section">
+            <h1>Resume Generator</h1>
+            <p>Fill out the form below to generate your resume instantly!</p>
+
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" placeholder="Pranay Kumar">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="pranaykumar123@gmail.com">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" placeholder="+91-9876543210">
+            </div>
+            <div class="form-group">
+                <label for="linkedin">LinkedIn URL:</label>
+                <input type="url" id="linkedin" placeholder="https://linkedin.com/in/pranaykumar">
+            </div>
+            <div class="form-group">
+                <label for="github">GitHub URL:</label>
+                <input type="url" id="github" placeholder="https://github.com/pranaykumar">
+            </div>
+
+            <div class="form-group">
+                <label for="summary">Summary/Objective:</label>
+                <textarea id="summary" rows="4" placeholder="A brief overview of your professional skills and goals."></textarea>
+            </div>
+
+            <h2>Education</h2>
+            <div id="educationInputs">
+                <div class="education-entry">
+                    <input type="text" class="edu-institute" placeholder="Institute Name">
+                    <input type="text" class="edu-degree" placeholder="Degree/Program">
+                    <input type="text" class="edu-year" placeholder="Graduation Year (e.g., 2025)">
+                    <button type="button" class="remove-btn" onclick="removeEntry(this, 'education')">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addEntry('education')">Add Education</button>
+
+            <h2>Experience</h2>
+            <div id="experienceInputs">
+                <div class="experience-entry">
+                    <input type="text" class="exp-company" placeholder="Company Name">
+                    <input type="text" class="exp-position" placeholder="Position">
+                    <input type="text" class="exp-duration" placeholder="Duration (e.g., Jan 2022 - Dec 2023)">
+                    <textarea class="exp-description" rows="3" placeholder="Key responsibilities and achievements"></textarea>
+                    <button type="button" class="remove-btn" onclick="removeEntry(this, 'experience')">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addEntry('experience')">Add Experience</button>
+
+            <h2>Skills</h2>
+            <div class="form-group">
+                <label for="skills">Technical Skills (comma-separated):</label>
+                <textarea id="skills" rows="3" placeholder="Python, JavaScript, HTML, CSS, SQL, Git"></textarea>
+            </div>
+
+            <h2>Projects</h2>
+            <div id="projectInputs">
+                <div class="project-entry">
+                    <input type="text" class="proj-name" placeholder="Project Name">
+                    <input type="url" class="proj-link" placeholder="Project Link (Optional)">
+                    <input type="text" class="proj-tech" placeholder="Technologies Used (Comma-separated)">
+                    <textarea class="proj-description" rows="3" placeholder="Brief description of the project"></textarea>
+                    <button type="button" class="remove-btn" onclick="removeEntry(this, 'project')">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addEntry('project')">Add Project</button>
+
+            <button type="button" onclick="window.print()">Print/Save as PDF</button>
+
+        </div>
+
+        <div class="resume-preview-section">
+            <div id="resumeOutput" class="resume-output">
+                <p class="placeholder-text">Your resume will appear here as you type.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
